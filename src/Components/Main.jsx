@@ -33,10 +33,7 @@ const Main = () => {
         return false;
  
     }
-     else if ((fld.length < 7) || (fld.length > 15)) {
-        return false;
- 
-    } else if (illegalChars.test(fld)) {
+     else if (illegalChars.test(fld)) {
 
         return false;
  
