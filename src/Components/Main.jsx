@@ -27,22 +27,22 @@ const Main = () => {
    }
    const passValidate = (fld)=>{
     var error = "";
-    var illegalChars = "dummytext";
- 
-    if (fld == "") {
-        return false;
- 
+    let result = fld.replace('@','a');
+    let count1=0,count2=0;
+    for (var i = 0; i < result.length; i++) {
+        var c=result[i];
+        if(c>='a' && c<='z') 
+        continue;
+        else if(c>='A' && c<='Z')
+        count1++;
+        else if(c>='0' && c<='9')
+        count2++;
+        else
+         return false;
     }
-     else if (illegalChars.test(fld)) {
-
-        return false;
- 
-    }
-   else if ( (fld.search(/[a-zA-Z]+/)==-1) || (fld.search(/[0-9]+/)==-1) ) 
-   {
+     if(count1==0 || count2==0)
      return false;
- 
-    }
+     
    return true;
    }
   const myFunction = () =>{
@@ -64,7 +64,7 @@ const Main = () => {
      }
      else 
      {
-       alert("aise he chl rha")
+       alert("Validated");
      }
 
   }
